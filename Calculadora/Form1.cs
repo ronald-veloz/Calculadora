@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Calculadora
 {
-    public partial class Calculadora : Form
+    public partial class Form1 : Form
     {
-        public Calculadora()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        // Función auxiliar para leer y validar los números de las cajas de texto
+        // Función auxiliar para leer y validar los números
         private bool ObtenerValores(out double n1, out double n2)
         {
             n1 = 0;
