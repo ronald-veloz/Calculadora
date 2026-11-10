@@ -10,21 +10,90 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Calculadora : Form
     {
-        public Form1()
+        public Calculadora()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Función auxiliar para leer y validar los números de las cajas de texto
+        private bool ObtenerValores(out double n1, out double n2)
         {
-            lbl.Text = txt.Text;
+            n1 = 0;
+            n2 = 0;
+
+            if (double.TryParse(txtNum1.Text, out n1) && double.TryParse(txtNum2.Text, out n2))
+            {
+                return true;
+            }
+
+            MessageBox.Show("Por favor, ingresa números válidos.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
         }
 
-        private void lbl_Click(object sender, EventArgs e)
+        private void btnSuma_Click(object sender, EventArgs e)
         {
-            
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                txtResultado.Text = (n1 + n2).ToString();
+            }
+        }
+
+        private void btnResta_Click(object sender, EventArgs e)
+        {
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                txtResultado.Text = (n1 - n2).ToString();
+            }
+        }
+
+        private void btnMultiplicacion_Click(object sender, EventArgs e)
+        {
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                txtResultado.Text = (n1 * n2).ToString();
+            }
+        }
+
+        private void btnDivision_Click(object sender, EventArgs e)
+        {
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                if (n2 == 0)
+                {
+                    MessageBox.Show("No se puede dividir entre cero.", "Error matemático", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtResultado.Text = "Error";
+                }
+                else
+                {
+                    txtResultado.Text = (n1 / n2).ToString();
+                }
+            }
+        }
+
+        private void btnModulo_Click(object sender, EventArgs e)
+        {
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                if (n2 == 0)
+                {
+                    MessageBox.Show("No se puede calcular el módulo entre cero.", "Error matemático", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtResultado.Text = "Error";
+                }
+                else
+                {
+                    txtResultado.Text = (n1 % n2).ToString();
+                }
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNum1.Clear();
+            txtNum2.Clear();
+            txtResultado.Clear();
+            txtNum1.Focus();
         }
     }
 }
