@@ -74,13 +74,13 @@ PPE03_Veloz_Ronald_Calculadora/
 ## Capturas de pantalla
 
 ### Interfaz principal
-![Interfaz principal](capturas/interfaz.png)
+![Interfaz principal](interfaz.png)
 
 ### Operación realizada
-![Suma](capturas/suma.png)
+![Suma](suma.png)
 
 ### Mensaje de error por división para cero
-![División para cero](capturas/division-cero.png)
+![División para cero](division-cero.png)
 
 ## Pruebas realizadas
 
