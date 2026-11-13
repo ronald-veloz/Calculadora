@@ -80,7 +80,7 @@ PPE03_Veloz_Ronald_Calculadora/
 ![Suma](suma.png)
 
 ### Mensaje de error por división para cero
-![División para cero](division-cero.png)
+![División para cero](division_cero.png)
 
 ## Pruebas realizadas
 
